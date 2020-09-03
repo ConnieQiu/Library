@@ -65,7 +65,7 @@ deleteButton.addEventListener("click", function(){
    // let index = .getAttribute("data-index");
    let index = deleteButton.getAttribute("data-index");
   
-})
+});
 
 //clears text fields
 let form = document.getElementById("book-form");
