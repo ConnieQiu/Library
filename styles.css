@@ -1,0 +1,83 @@
+h1{
+    text-align: center;
+}
+
+h2{
+    display: inline-flex;
+}
+
+.form-inputs{
+    display: flex;
+}
+
+.book-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.book{
+    width: 100px;
+    margin-left: 20px;
+}
+
+.delete-button{
+    background-color: #ff280f;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    width: 80px;
+    height: 2em;
+    margin: 10px;
+}
+
+#new-book-button{
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 5em;
+    height: 3em;
+}
+
+#book-form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    height: 500px;
+    border-style: solid;
+    
+}
+#error{
+    color: red;
+}
+
+#whole-library{
+    border: solid;
+    border-width: 2px;
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 0px;
+    width: 70%;
+    height: 70%;
+}
+
+#title{
+    padding-left: 30px;
+}
+
+#pages{
+    padding-right: 30px;
+}
+
+#read{
+    padding-right: 14em;
+}
+#library-display {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border-bottom: solid;
+    border-width: 2px;
+}
+

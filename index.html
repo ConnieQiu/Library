@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>My Library</h1>
+    <button id="new-book-button" type="button">New Book</button>
+    <form id="book-form">
+        <label for="title">Title:</label>
+        <input class="form-inputs" id="book-title" name="title" type="text">
+
+        <label for="author">Author:</label>
+        <input class="form-inputs" id="book-author" name="author" type="text">
+
+        <label for="pages">Pages:</label>
+        <input class="form-inputs" id="book-pages" name="pages" type="number" min="1" max="15,000"> 
+        <span id="error"></span>
+
+        <input name="have-read" type="checkbox">
+        <label for="have-read">Have Read?</label>
+
+        <button class="form-inputs"
+        id="submit-button" type="button">Add Book</button>
+    </form>
+<div id="whole-library">
+    <div id="library-display">
+        <div>
+            <h2 id="title">Title</h2>
+        </div>
+        <div>
+            <h2 id="author">Author</h2>
+        </div>
+        <div>
+            <h2 id="pages">Pages</h2>
+        </div>
+        <div>
+            <h2 id="read">Read</h2>
+        </div>
+    </div>
+    <div id="library">
+        <div class="book-div">
+            <p class="book">Harry Potter</p>
+            <p class="book">J.K. Rowling</p>
+            <p class="book">652 Pages</p>
+            <p class="book">Read</p>
+            <button class="delete-button">Delete</button>
+        </div>
+    </div>
+</div>
+    <script src="index.js"></script>
+</body>
+</html>
