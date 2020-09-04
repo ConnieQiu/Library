@@ -6,21 +6,19 @@
     <h1>My Library</h1>
     <button id="new-book-button" type="button">New Book</button>
     <form id="book-form">
-        <label for="title">Title:</label>
-        <input class="form-inputs" id="book-title" name="title" type="text">
+        <label class="form-inputs" for="title">Title</label>
+        <input class="form-inputs book-info" id="book-title" name="title" type="text">
 
-        <label for="author">Author:</label>
-        <input class="form-inputs" id="book-author" name="author" type="text">
+        <label class="form-inputs" for="author">Author</label>
+        <input class="form-inputs book-info" id="book-author" name="author" type="text">
 
-        <label for="pages">Pages:</label>
-        <input class="form-inputs" id="book-pages" name="pages" type="number" min="1" max="15,000"> 
-        <span id="error"></span>
-
-        <input name="have-read" type="checkbox">
-        <label for="have-read">Have Read?</label>
-
-        <button class="form-inputs"
-        id="submit-button" type="button">Add Book</button>
+        <label class="form-inputs" for="pages">Pages</label>
+        <input class="form-inputs book-info" id="book-pages" name="pages" type="number" min="1" max="15,000"> 
+        <span class="form-inputs" id="error"></span>
+        <div class="have-read-checkbox-div">
+            <input class="read-checkbox book-info" id="have-read-check" name="have-read" type="checkbox"><label class="read-checkbox" for="have-read">Have Read?</label>
+        </div>
+        <button id="submit-button" type="button">Add Book</button>
     </form>
 <div id="whole-library">
     <div id="library-display">
@@ -38,10 +36,10 @@
         </div>
     </div>
     <div id="library">
-        <div class="book-div">
+        <div id="first-book" class="book-div">
             <p class="book">Harry Potter</p>
             <p class="book">J.K. Rowling</p>
-            <p class="book">652 Pages</p>
+            <p class="book">652</p>
             <p class="book">Read</p>
             <button class="delete-button">Delete</button>
         </div>

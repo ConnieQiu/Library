@@ -1,3 +1,8 @@
+body{
+    background-color: #f5cbde;
+    color: #242222;
+}
+
 h1{
     text-align: center;
 }
@@ -6,13 +11,28 @@ h2{
     display: inline-flex;
 }
 
+
+
 .form-inputs{
     display: flex;
+    margin: auto;
+    width: 97%;
+    font-size: 18px;
+}
+
+
+.read-checkbox{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    left: 40%;
+    margin-bottom: 10px;
 }
 
 .book-div{
     display: flex;
     justify-content: space-between;
+    font-size: 18px;
 }
 
 .book{
@@ -21,11 +41,11 @@ h2{
 }
 
 .delete-button{
-    background-color: #ff280f;
+    background-color: #f5388e;
     border-radius: 5px;
     border-width: 1px;
     border-style: solid;
-    border-color: grey;
+    border-color: lightgrey;
     width: 80px;
     height: 2em;
     margin: 10px;
@@ -35,7 +55,7 @@ h2{
     display: block;
     margin: auto;
     margin-bottom: 50px;
-    width: 5em;
+    width: 7vw;
     height: 3em;
 }
 
@@ -43,17 +63,28 @@ h2{
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 50%;
-    height: 500px;
-    border-style: solid;
-    
+    margin-top: 10px;
+    width: 30vw;
+    height: 10%;
 }
+
+#submit-button{
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 80px;
+}
+
 #error{
     color: red;
+    margin-top: 10px;
+    border-radius: 2px;
 }
 
 #whole-library{
     border: solid;
+    border-color: black;
     border-width: 2px;
     margin: auto;
     margin-top: 10px;
@@ -81,3 +112,9 @@ h2{
     border-width: 2px;
 }
 
+#submit-button:hover{
+    background-color: #cff0cc;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}

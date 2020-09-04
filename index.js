@@ -9,65 +9,72 @@ function Book(title, author, pages,read){
     this.haveRead = read
  }
    
- function createBook(){
-    let bookTitle = document.getElementById("book-title").value;
-    let bookAuthor = document.getElementById("book-author").value;
-    let bookPages = document.getElementById("book-pages").value;
-    let read = "Read";
-    //makes new book
-    aNewBook = new Book(bookTitle,bookAuthor,bookPages,read);
-    myLibrary.push(aNewBook);
- }
 
 //takes user input and creates a book object with user input
 function addBookToLibrary(){
-    createBook();
+    let bookTitle = document.getElementById("book-title").value;
+    let bookAuthor = document.getElementById("book-author").value;
+    let bookPages = document.getElementById("book-pages").value;
     let booksLibrary = document.getElementById("library");
-    let eachBookDiv = document.createElement("div");
-    let pagesNum = document.getElementById("book-pages").value;
-    let currentBook = myLibrary[myLibrary.length - 1];
     let error;
-    if(pagesNum < 1){
+    let readOrNot;
+    let inputText = document.querySelectorAll(".book-info");
+    let readCheck = document.getElementById("have-read-check").checked;
+    if(readCheck === true){
+        readOrNot = "Read";
+    }else{
+        readOrNot = "Not Read";
+    }
+   //checks to make sure all fields are filled
+    if(bookPages < 1 || bookTitle === "" || bookAuthor === "" || bookPages === ""){
         error = document.querySelector("#error"); 
-        error.textContent ="Please enter a number!";
+        error.textContent ="Please fill in all fields!";
         setInterval(function(){
             error.textContent = " ";
-        }, 2000)
+        }, 2800)
 
     }else{
-        let deleteButton = document.createElement("button");
+        aNewBook = new Book(inputText[0].value,inputText[1].value,inputText[2].value,inputText[3].value,readOrNot);
+        myLibrary.push(aNewBook);
+        let eachBookDiv = document.createElement("div");
+    let currentBook = myLibrary[myLibrary.length - 1];
+    let deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
-        deleteButton.setAttribute("data-index", myLibrary.length - 1)
+        deleteButton.setAttribute("data-index", myLibrary.length - 1);
         deleteButton.classList.add("delete-button");
+        deleteButton.addEventListener("click",function(){
+            let index = deleteButton.getAttribute("data-index");
+            let divToRemove = document.querySelector(`[data-index = "${index}"]`);
+            divToRemove.remove();
+        });
+
         eachBookDiv.classList.add("book-div");
-        eachBookDiv.setAttribute("data-index", myLibrary.length - 1)
         console.log(currentBook);
-    //loops through all the keys in currentBook and displays the values
-        for(key in currentBook){
+//adds book to display
+        inputText.forEach(function(el){
             let para = document.createElement("p");
-            para.textContent = currentBook[key];
-            console.log(currentBook[key]);
-            eachBookDiv.appendChild(para);
-            eachBookDiv.appendChild(deleteButton);
-        //add class book so css styles will apply
+            para.textContent = el.value;
             para.classList.add("book");
-        }
-    booksLibrary.appendChild(eachBookDiv);
-    form.style.display = "none";
-    form.reset();
+            eachBookDiv.setAttribute("data-index", myLibrary.length - 1);
+            eachBookDiv.appendChild(para);
+            booksLibrary.appendChild(eachBookDiv);
+            eachBookDiv.appendChild(deleteButton);
+        })
+        form.reset();
     }
-    
- }
+   
+    }
+ 
 
 //deletes when delete button is clicked
-let deleteButton = document.querySelector(".delete-button");
-deleteButton.addEventListener("click", function(){
-   // let index = .getAttribute("data-index");
-   let index = deleteButton.getAttribute("data-index");
-  
-})
+let originalDeleteButton = document.querySelector(".delete-button")
+originalDeleteButton.addEventListener("click", function(){
+    let firstBook = document.querySelector("#first-book");
+    firstBook.remove();
+});
 
-//clears text fields
+
+//hides form
 let form = document.getElementById("book-form");
 form.style.display = "none";
 
